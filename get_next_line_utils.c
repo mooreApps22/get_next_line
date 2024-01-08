@@ -12,18 +12,6 @@
 
 #include "get_next_line.h"
 
-void	str_copy(char *dest, const char *src, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-}
-
 int	has_newline(t_list *head)
 {
 	int	i;
