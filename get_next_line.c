@@ -19,8 +19,7 @@ void	push_new_tail(t_list **head, char *str, size_t len)
 
 	new = malloc(sizeof(t_list));
 	new->len = len;
-	new->str = malloc(len + 1);
-	str_copy(new->str, str, len);
+	new->str = str;
 	new->str[len] = '\0';
 	new->next = NULL;
 	if (!new)
@@ -77,6 +76,7 @@ void	read_file(t_list **head, int fd)
 		}
 		buf[nbytes] = '\0';
 		examine_buf(head, buf);
+		free(buf);
 	}
 }
 
